@@ -1,21 +1,22 @@
 {
-  "name": "vanilla-app-template",
+  "name": "zvigert-partner-2.0",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/project-group-12/",
-    "preview": "vite preview"
+    "build": "vite build --base=/zvigert-partner-2.0/",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "glob": "^8.1.0",
     "vite": "^4.5.14"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
-  "license": "ISC",
   "dependencies": {
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
-  }
+  },
+  "author": "Ivandikov Igor <profidig.marketing@gmail.com>",
+  "license": "ISC"
 }
