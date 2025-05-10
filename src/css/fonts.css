@@ -40,3 +40,19 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Ermilov";
+    src: url(../fonts/Ermilov-bold.otf);
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Regular.ttf);
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
