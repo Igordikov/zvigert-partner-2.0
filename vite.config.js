@@ -5,47 +5,31 @@ import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig(({ command }) => {
   return {
-    // --- КЛЮЧЕВАЯ НАСТРОЙКА для GitHub Pages ---
-    // Указывает базовый путь, по которому будет доступен ваш сайт.
-    // Для https://username.github.io/repository-name/ это должно быть '/repository-name/'
-    base: '/zvigert-partner-2.0/', // Это уже корректно установлено вами!
-
+    base: '/zvigert-partner-2.0/',
     define: {
-      // Эта настройка специфична для вашего проекта, оставляем как есть
       [command === 'serve' ? 'global' : '_global']: {},
     },
-
-    // --- Настройки путей проекта ---
-    // Указывает, что корень вашего исходного кода находится в папке 'src'
-    // Это значит, что Vite будет искать index.html и другие входные точки в 'src/'
     root: 'src',
+    publicDir: '../public', // <--- ИЗМЕНИТЕ ЭТО, ЕСЛИ ВАША ПАПКА PUBLIC НАХОДИТСЯ НЕПОСРЕДСТВЕННО В КОРНЕ ПРОЕКТА.
+                            // Если ваша папка public это 'project-root/src/public/',
+                            // то здесь должно быть:
+                            // publicDir: 'src/public', <--- ПОПРОБУЙТЕ ЭТОТ ВАРИАНТ
 
     build: {
-      sourcemap: true, // Генерировать sourcemaps (полезно для отладки)
-
+      sourcemap: true,
       rollupOptions: {
-        // Указывает, что все HTML-файлы в папке 'src' являются входными точками для сборки
-        // Это позволяет создавать многостраничные сайты
-        input: glob.sync('./src/*.html'),
+        input: glob.sync('./src/*.html'), // Это уже настроено на src
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return 'vendor';
             }
           },
-          // Имя для основного JS-файла, если у вас есть общие модули
           entryFileNames: 'commonHelpers.js',
         },
       },
-      // --- КУДА БУДЕТ СОБИРАТЬСЯ ПРОЕКТ ---
-      // Указывает, что собранный сайт будет помещен в папку 'dist'
-      // которая будет создана в корне вашего проекта (на один уровень выше 'src')
-      outDir: '../dist',
+      outDir: '../dist', // Это корректно, результат сборки будет в project-root/dist
     },
-
-    plugins: [
-      injectHTML(), // Плагин для вставки HTML (если используется)
-      FullReload(['./src/**/**.html']) // Плагин для перезагрузки при изменениях HTML
-    ],
+    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
 });
