@@ -1,0 +1,157 @@
+/* --- Секция Тарифы - Новый дизайн --- */
+.tariffs-section {
+    padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Общий стиль для заголовков секций, если хотите использовать его и для других */
+.section-title {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #333; /* Темный для контраста */
+    position: relative;
+    padding-bottom: 15px; /* Пространство для подчеркивания */
+}
+
+.section-title::after { /* Декоративное подчеркивание */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #efa201; /* Фирменный акцентный цвет */
+    border-radius: 2px;
+}
+
+.tariffs-intro,
+.tariffs-additional-info {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #5a5a5a; /* Чуть мягче черного */
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.payment-conditions {
+    margin-bottom: 40px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment-conditions-lead {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.conditions-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid; /* Используем grid для расположения карточек */
+    gap: 25px; /* Пространство между карточками */
+}
+
+/* На больших экранах можно расположить в несколько колонок, если пунктов много.
+   Для трех пунктов оставим одну колонку, но с возможностью расширения.
+   Если у вас будет 4 или больше пунктов, можно раскомментировать grid-template-columns */
+/* @media (min-width: 768px) {
+    .conditions-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+} */
+
+
+.condition-item {
+    background-color: #ffffff; /* Белый фон для карточек */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start; /* Выравнивание иконки и текста */
+    border-left: 5px solid #efa201; /* Акцентная полоса фирменного цвета */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.condition-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.condition-icon-wrapper {
+    flex-shrink: 0;
+    margin-right: 20px;
+    color: #efa201; /* Цвет иконки */
+    font-size: 2em; /* Размер иконки (для текстовых) */
+    line-height: 1; /* Для лучшего выравнивания текстовых иконок */
+    margin-top: 3px; /* Небольшая коррекция для вертикального выравнивания */
+}
+
+.icon-feature { /* Стили для текстовых иконок, если вы их используете */
+    display: inline-block;
+}
+
+.condition-text {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.6;
+}
+
+.condition-text strong {
+    color: #2c3e50; /* Более темный цвет для выделения, не оранжевый, чтобы не сливалось с иконкой */
+    font-weight: 600;
+}
+
+.tariffs-cta {
+    display: block;
+    margin-top: 40px;
+    padding: 25px 30px;
+    background-color: #efa201; /* Фирменный акцентный фон */
+    border-radius: 10px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(239, 162, 1, 0.3); /* Тень под цвет фона */
+}
+
+.tariffs-cta p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.tariffs-cta .cta-link {
+    font-weight: 700;
+}
+
+.tariffs-cta:hover {
+    background-color: #d18b01;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2em;
+    }
+    .payment-conditions-lead {
+        font-size: 1.4em;
+    }
+    .condition-item {
+        padding: 20px;
+    }
+    .condition-icon-wrapper {
+        font-size: 1.8em;
+        margin-right: 15px;
+    }
+    .tariffs-cta p {
+        font-size: 1.1em;
+    }
+}

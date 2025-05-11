@@ -54,7 +54,9 @@
 
     <load src="partials/instrumenti.html" />
 
+    <load src="partials/spivpracia.html" />
 
+    <load src="partials/tarifi.html" />
 
     <load src="partials/reviews.html" />
 
@@ -133,6 +135,18 @@ item.addEventListener('click', function() {
         });
       });
     </script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
     
 </body>
 

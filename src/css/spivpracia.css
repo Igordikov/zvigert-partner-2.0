@@ -1,0 +1,84 @@
+
+
+.cooperation-stages {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.cooperation-stages h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.stages-wrapper {
+    display: flex;
+    flex-direction: column; /* Этапы идут друг под другом */
+    gap: 30px; /* Пространство между этапами */
+}
+
+.stage-item {
+    background: #f9f2e5;
+    display: flex; /* Располагаем номер и контент рядом */
+    align-items: flex-start; /* Выравниваем по верху */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Для возможной соединительной линии */
+}
+
+.stage-number-container {
+    margin-right: 25px;
+    flex-shrink: 0; /* Чтобы контейнер с номером не сжимался */
+}
+
+.stage-number {
+    display: inline-flex; /* Чтобы можно было центрировать текст внутри */
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #d18b01;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 50%; /* Круглая форма */
+}
+
+.stage-content {
+    flex-grow: 1; /* Чтобы контент занимал оставшееся место */
+}
+
+.stage-title {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.stage-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Опционально: соединительные линии (немного сложнее для вертикального списка) */
+/* Для простоты, я не буду добавлять их здесь, но можно сделать через ::before / ::after */
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cooperation-stages h2 {
+        font-size: 2em;
+    }
+    .stage-item {
+        flex-direction: column; /* Номер над текстом на маленьких экранах */
+        align-items: center; /* Центрируем все */
+        text-align: center;
+    }
+    .stage-number-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .stage-title {
+        font-size: 1.3em;
+    }
+}
