@@ -85,6 +85,7 @@
 }
 
 .section-contactus-message {
+   
     border: 1px solid rgba(12, 12, 12, 0.15);
     border-radius: 12px;
     padding: 12px 14px;
@@ -197,12 +198,15 @@
 
     .section-contactus-form {
         max-width: 460px;
+       
     }
 
     .contactus-input {
         padding: 16px 18px;
         height: 52px;
     }
+
+    
 
     .contactus-input::placeholder {
         font-size: 16px;
@@ -216,6 +220,7 @@
     .section-contactus-message {
         padding: 16px 54px;
         height: 90px;
+       
     }
 
     .placeholder {

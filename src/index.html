@@ -147,6 +147,52 @@ item.addEventListener('click', function() {
     });
 });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.header-desktop-nav-link');
+  const activeClass = 'active-link';
+  const mobileActiveClass = 'mobile-active-link';
+
+  // Функція для встановлення активного стану
+  function setActiveLink(link) {
+    navLinks.forEach(navLink => {
+      navLink.classList.remove(activeClass, mobileActiveClass);
+    });
+    link.classList.add(activeClass, mobileActiveClass);
+  }
+
+  // Перевірка поточної сторінки для початкового встановлення активного стану
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === window.location.pathname || (link.getAttribute('href').startsWith('#') && window.location.hash === link.getAttribute('href'))) {
+      setActiveLink(link);
+    } else if (link.getAttribute('href') === './index.html' && window.location.pathname === '/') {
+      setActiveLink(link); // Обробка головної сторінки
+    }
+
+    // Додавання обробника кліку для зміни активного стану
+    link.addEventListener('click', function(event) {
+      // Якщо посилання веде на якір, плавно прокручуємо і встановлюємо активний клас
+      if (this.getAttribute('href').startsWith('#')) {
+        event.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+          setActiveLink(this);
+          // Оновлюємо хеш URL, щоб відобразити поточну секцію
+          history.pushState(null, null, targetId);
+        }
+      } else {
+        // Для звичайних переходів сторінок активний клас встановиться при завантаженні нової сторінки
+        setActiveLink(this);
+      }
+    });
+  });
+});
+</script>
+
+
     
 </body>
 

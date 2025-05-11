@@ -94,7 +94,7 @@ width: 100%;
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background-color: #3350e9;
+  background-color: #d18b01;
 }
 
 .header-nav-list:not(:last-child) {
@@ -130,7 +130,7 @@ width: 100%;
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background-color: #3350e9;
+  background-color: #d18b01;
 }
 
 .header-social-item {
@@ -230,8 +230,7 @@ width: 100%;
     align-items: center;
     gap: 40px;
   }
-  .header-desktop-nav-list {
-  }
+ 
 
   .header-desktop-nav-link {
     display: flex;
@@ -267,6 +266,6 @@ width: 100%;
   .header-desktop-social-link:hover,
   .header-desktop-social-link:focus {
     border: 1px solid rgba(51, 80, 233, 0.1);
-    fill: #3350e9;
+    fill: #d18b01;
   }
 }
