@@ -48,7 +48,7 @@ width: 100%;
       rgba(12, 12, 12, 0.92),
       rgba(12, 12, 12, 0.92)
     ),
-    url(/img/header-img/menu-mobile-background.jpg);
+    url(./img/hero-img/avtovoz-zvigert.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,7 +61,7 @@ width: 100%;
         rgba(12, 12, 12, 0.92),
         rgba(12, 12, 12, 0.92)
       ),
-      url(/img/header-img/menu-mobile-background@2x.jpg);
+      url(../img/hero-img/avtovoz-zvigert.webp);
   }
 }
 
