@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zvigert-Auto Partners</title>
+  <title>Zviger-Auto Partners</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
     integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -37,18 +37,22 @@
     <load src="partials/hero.html" />
 
 
-    <load src="partials/about-us.html" />
-
-
     <load src="partials/catalog.html" />
+
+    
+    <load src="partials/pro-nas.html" />
+    
+
 
 
 
     <load src="partials/advertisement.html" />
 
+    <load src="partials/perevagi.html" />
 
 
-    <load src="partials/sale.html" />
+
+    <load src="partials/instrumenti.html" />
 
 
 
@@ -83,6 +87,52 @@
       integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
       crossorigin="anonymous"
     ></script>
+
+
+
+      <!-- Открывание карточки услуг -->
+
+      <script>
+        document.querySelectorAll('.service-card').forEach(card => {
+          card.addEventListener('click', () => {
+            card.classList.toggle('expanded');
+          });
+        });
+      </script>
+
+       <script>
+        document.querySelectorAll('.nav-desktop-item').forEach(item => {
+item.addEventListener('click', function() {
+    document.querySelectorAll('.nav-desktop-item').forEach(el => el.classList.remove('active'));
+    this.classList.add('active');
+});
+});
+       </script>
+
+       <script>function setActive(element) {
+        // Удаляем "active" у всех ссылок
+        document.querySelectorAll('.breadcrumb a').forEach(a => a.classList.remove('active'));
+        // Добавляем "active" к нажатой ссылке
+        element.classList.add('active');
+    }
+    </script>
+    
+    <!-- Переключатедль инструментов -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const thumbnails = document.querySelectorAll(".sale-list-item img"); // Находим все миниатюры
+        const mainImage = document.querySelector(".sale-block-img"); // Основное изображение в блоке
+    
+        thumbnails.forEach((thumbnail) => {
+          thumbnail.addEventListener("click", function () {
+            mainImage.src = this.src; // Заменяем изображение
+            mainImage.alt = this.alt; // Обновляем описание
+            mainImage.style.display = "block"; // Убедимся, что изображение видно
+          });
+        });
+      });
+    </script>
     
 </body>
 

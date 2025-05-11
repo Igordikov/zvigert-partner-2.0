@@ -17,9 +17,12 @@ main {
   
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: "Ermilov", sans-serif;
 }
+
 
 
 h1,
@@ -39,7 +42,7 @@ p:last-child {
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+ list-style: none;
 }
 
 a {

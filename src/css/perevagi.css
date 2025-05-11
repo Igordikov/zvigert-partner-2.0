@@ -1,0 +1,84 @@
+.perevagi-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.service-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  padding: 24px 0 60px;
+    gap: 16px; 
+}
+  
+.service-card {
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 24px 32px;
+    width: 350px;
+    background: #f9f2e5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .service-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+  
+  }
+
+  .service-card.expanded .service-text {
+    max-height: 500px; /* достаточно большое значение */
+    opacity: 1;
+  }
+  
+  /* Поворот стрелки */
+  .service-card.expanded .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  
+  @media screen and (min-width: 768px) {
+    .subtitle-text {
+        font-family: "Ermilov", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    .service-card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      
+      .service-card {
+          width: calc(50% - 10px); /* Делим пространство на 2 равные части с учетом отступа */
+         
+      }  
+  }
+   
+    @media screen and (min-width: 1280px) {
+
+     
+  }
+  

@@ -20,6 +20,7 @@
 }
 .catalog-img {
   margin: auto;
+  border-radius: 30px 30px 0 0;
 }
 .menu-cards {
   display: flex;
@@ -29,7 +30,7 @@
 .page-title-catalog {
   border: 1px solid rgba(12, 12, 12, 0.05);
   border-radius: 30px;
-  background: #f3f3f3;
+  background: #f9f2e5;
 }
 @media screen and (min-width: 768px) {
 
@@ -108,9 +109,9 @@
   letter-spacing: -0.02em;
   color: #0c0c0c;
   margin-bottom: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  
+
+  
 }
 .name-text {
   font-weight: 400;
